@@ -10,7 +10,7 @@ const client = redis.createClient({
   },
 });
  
-client.connect();
+//client.connect();
 client.set("visits", 0);
  
 app.get("/", async (req, res) => {

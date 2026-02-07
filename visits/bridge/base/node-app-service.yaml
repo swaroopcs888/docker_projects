@@ -1,0 +1,21 @@
+# check if there is at least one published port
+
+#! node-app-service.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Service
+metadata:
+    name: node-app-published
+    namespace: visits
+    labels:
+        com.docker.compose.project: visits
+        com.docker.compose.service: node-app
+spec:
+    selector:
+        com.docker.compose.project: visits
+        com.docker.compose.service: node-app
+    ports:
+        - name: node-app-4001
+          port: 4001
+          protocol: TCP
+          targetPort: node-app-8081
